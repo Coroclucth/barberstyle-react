@@ -1,0 +1,91 @@
+@import './variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--offwhite);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+img  { max-width: 100%; display: block; }
+a    { text-decoration: none; color: inherit; }
+ul   { list-style: none; }
+
+/* ── Clases utilitarias compartidas ── */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.btn--primary {
+  background: var(--blue-cta);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--blue-primary);
+  border: 2px solid var(--blue-primary);
+}
+
+.btn--outline:hover {
+  background: var(--blue-primary);
+  color: var(--white);
+}
+
+.section {
+  padding: 4rem 6rem;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.section__title {
+  font-family: var(--font-title);
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--blue);
+  margin-bottom: .5rem;
+}
+
+.section__subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform .22s, box-shadow .22s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
