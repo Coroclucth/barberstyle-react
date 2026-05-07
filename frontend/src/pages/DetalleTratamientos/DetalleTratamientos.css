@@ -1,0 +1,38 @@
+/* Estilos exclusivos de DetalleTratamientos — los compartidos están en detalle-shared.css */
+
+/* ── Tabs de tipo de tratamiento ── */
+.detalle__tabs-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.detalle__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detalle__tab {
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  background: var(--white);
+  padding: 0.35rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.detalle__tab:hover {
+  border-color: var(--blue-lt);
+}
+
+.detalle__tab--activo {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
