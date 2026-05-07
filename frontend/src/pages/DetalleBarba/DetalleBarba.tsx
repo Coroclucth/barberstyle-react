@@ -78,7 +78,7 @@ const DetalleBarba = () => {
               {PROFESIONALES.map((p) => (
                 <div
                   key={p.nombre}
-                  className={`detalle__prof-card${profesional === p.nombre ? ' detalle__prof-card--activo' : ''}`}
+                  className={`card detalle__prof-card${profesional === p.nombre ? ' detalle__prof-card--activo' : ''}`}
                   onClick={() => setProfesional(p.nombre)}
                 >
                   <img src={p.img} alt={p.nombre} className="detalle__prof-img" />
@@ -141,8 +141,8 @@ const DetalleBarba = () => {
               <span className="reserva__total-valor">$18.000</span>
             </div>
 
-            <button className="reserva__btn-confirmar">Confirmar Reserva</button>
-            <Link to="/reserva" className="reserva__btn-ver">Ver disponibilidad completa</Link>
+            <button className="btn btn--primary reserva__btn-full">Confirmar Reserva</button>
+            <Link to="/reserva" className="btn btn--outline reserva__btn-full">Ver disponibilidad completa</Link>
 
             <p className="reserva__nota">
               Nota: Al completar la reserva recibirás un correo de confirmación con los detalles,

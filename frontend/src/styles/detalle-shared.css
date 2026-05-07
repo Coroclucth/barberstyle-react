@@ -1,6 +1,4 @@
-/* Estilos compartidos para páginas de detalle de servicio */
-
-/* ── Contenedor base ── */
+/* ── Página ── */
 .page-detalle {
   background: var(--offwhite);
   min-height: 100vh;
@@ -18,21 +16,11 @@
   font-size: 0.85rem;
 }
 
-.detalle__breadcrumb a {
-  color: var(--text-secondary);
-  text-decoration: none;
-}
+.detalle__breadcrumb a           { color: var(--text-secondary); }
+.detalle__breadcrumb a:hover     { color: var(--blue); }
+.detalle__breadcrumb-sep         { color: var(--text-secondary); }
+.detalle__breadcrumb-actual      { color: var(--text-dark); font-weight: 500; }
 
-.detalle__breadcrumb a:hover { color: var(--blue); }
-
-.detalle__breadcrumb-sep { color: var(--text-secondary); }
-
-.detalle__breadcrumb-actual {
-  color: var(--text-dark);
-  font-weight: 500;
-}
-
-/* ── Layout dos columnas ── */
 .detalle__layout {
   max-width: 1400px;
   width: 100%;
@@ -45,7 +33,6 @@
   box-sizing: border-box;
 }
 
-/* ── Columna principal ── */
 .detalle__main {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -54,7 +41,6 @@
   text-align: left;
 }
 
-/* ── Encabezado ── */
 .detalle__encabezado {
   display: flex;
   justify-content: space-between;
@@ -81,8 +67,8 @@
   flex-wrap: wrap;
 }
 
-.detalle__estrellas { color: #f59e0b; letter-spacing: 1px; }
-.detalle__rating    { color: var(--text-dark); font-weight: 600; }
+.detalle__estrellas  { color: #f59e0b; letter-spacing: 1px; }
+.detalle__rating     { color: var(--text-dark); font-weight: 600; }
 
 .detalle__descripcion {
   font-family: var(--font-body);
@@ -104,16 +90,8 @@
   white-space: nowrap;
 }
 
-/* ── Divisor ── */
-.detalle__divider {
-  height: 1px;
-  background: var(--border);
-  margin: 1.5rem 0;
-}
-
-/* ── Secciones ── */
-.detalle__seccion { margin-bottom: 0.5rem; }
-
+.detalle__divider       { height: 1px; background: var(--border); margin: 1.5rem 0; }
+.detalle__seccion       { margin-bottom: 0.5rem; }
 .detalle__seccion-titulo {
   font-family: var(--font-title);
   font-size: 1.2rem;
@@ -121,7 +99,6 @@
   margin-bottom: 1rem;
 }
 
-/* ── Galería ── */
 .detalle__galeria {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -139,7 +116,6 @@
 
 .detalle__galeria-img:hover { transform: scale(1.03); }
 
-/* ── Profesionales ── */
 .detalle__profesionales {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -147,8 +123,6 @@
 }
 
 .detalle__prof-card {
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-md);
   padding: 1.25rem 0.75rem 1rem;
   display: flex;
   flex-direction: column;
@@ -156,12 +130,12 @@
   gap: 0.5rem;
   cursor: pointer;
   transition: border-color 0.2s, box-shadow 0.2s;
-  background: var(--white);
 }
 
-.detalle__prof-card:hover       { border-color: var(--blue-lt); box-shadow: var(--shadow-sm); }
-.detalle__prof-card--activo     { border-color: var(--blue); box-shadow: var(--shadow-sm); }
-.detalle__prof-card--inactivo   { opacity: 0.5; cursor: not-allowed; }
+
+.detalle__prof-card:hover      { transform: none; border-color: var(--blue-lt); }
+.detalle__prof-card--activo    { border-color: var(--blue) !important; }
+.detalle__prof-card--inactivo  { opacity: 0.5; cursor: not-allowed; }
 
 .detalle__prof-img {
   width: 72px;
@@ -189,7 +163,7 @@
 .detalle__prof-badge--disponible { background: #dcfce7; color: #16a34a; }
 .detalle__prof-badge--ocupado    { background: #f1f0ef; color: #888; }
 
-/* ── Sidebar ── */
+/* ── Sidebar sticky ── */
 .detalle__sidebar {
   position: sticky;
   top: 1.5rem;
@@ -210,7 +184,6 @@
   font-family: var(--font-title);
   font-size: 1.25rem;
   color: var(--blue);
-  margin-bottom: 0.25rem;
   text-align: center;
 }
 
@@ -238,13 +211,10 @@
 }
 
 .reserva__select:focus,
-.reserva__input:focus { border-color: var(--blue); }
+.reserva__input:focus  { border-color: var(--blue); }
 
-.reserva__horarios {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: nowrap;
-}
+/* Horarios */
+.reserva__horarios { display: flex; gap: 0.5rem; flex-wrap: nowrap; }
 
 .reserva__hora {
   border: 1.5px solid var(--border);
@@ -258,12 +228,12 @@
   transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
 
-.reserva__hora:hover    { border-color: var(--blue-lt); }
-.reserva__hora--activa  { background: var(--blue); border-color: var(--blue); color: var(--white); }
+.reserva__hora:hover   { border-color: var(--blue-lt); }
+.reserva__hora--activa { background: var(--blue); border-color: var(--blue); color: var(--white); }
 
-.reserva__divider { height: 1px; background: var(--border); }
-
-.reserva__resumen { display: flex; flex-direction: column; gap: 0.4rem; }
+/* Resumen de precio */
+.reserva__divider  { height: 1px; background: var(--border); }
+.reserva__resumen  { display: flex; flex-direction: column; gap: 0.4rem; }
 
 .reserva__linea {
   display: flex;
@@ -285,40 +255,14 @@
 
 .reserva__total-valor { color: var(--blue); }
 
-.reserva__btn-confirmar {
-  width: 100%;
-  background: var(--blue);
-  color: var(--white);
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 0.8rem;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.reserva__btn-confirmar:hover { background: var(--blue-lt); }
-
-.reserva__btn-ver {
+.reserva__btn-full {
+  width: 100% !important;
   display: block;
-  width: 100%;
-  border: 1.5px solid var(--blue);
-  border-radius: var(--radius-sm);
-  padding: 0.75rem;
   text-align: center;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--blue);
-  text-decoration: none;
-  transition: background 0.2s;
   box-sizing: border-box;
 }
 
-.reserva__btn-ver:hover { background: var(--offwhite); }
-
+/* Nota al pie */
 .reserva__nota {
   font-family: var(--font-body);
   font-size: 0.75rem;
@@ -335,11 +279,11 @@
     grid-template-columns: 1fr;
     padding: 1rem 1rem 3rem;
   }
-  .detalle__sidebar  { position: static; }
-  .detalle__galeria  { grid-template-columns: repeat(2, 1fr); }
+  .detalle__sidebar { position: static; }
+  .detalle__galeria { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 540px) {
-  .detalle__encabezado       { flex-direction: column; }
-  .detalle__profesionales    { grid-template-columns: 1fr; }
+  .detalle__encabezado    { flex-direction: column; }
+  .detalle__profesionales { grid-template-columns: 1fr; }
 }
