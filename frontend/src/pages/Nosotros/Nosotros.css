@@ -1,0 +1,265 @@
+
+Copiar
+
+/* ══════════════════════════════════════════════════
+   Nosotros.css
+   Usa las variables de src/styles/variables.css
+   ══════════════════════════════════════════════════ */
+ 
+.nos-page {
+  background-color: #f2eee3;
+  min-height: calc(100vh - 64px);
+  padding: 2.5rem 2rem 4rem;
+  box-sizing: border-box;
+}
+ 
+/* ── Encabezado ─────────────────────────────────── */
+.nos-header {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+}
+ 
+.nos-header__inner {
+  position: relative;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+ 
+/* Badge de estrellas: pegado a la izquierda */
+.nos-badge {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.82rem;
+  color: #c9a227;
+  white-space: nowrap;
+}
+ 
+.nos-titulo {
+  font-family: var(--font-title);
+  color: var(--blue);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin: 0;
+}
+ 
+/* ── Bento Grid ─────────────────────────────────────
+   Fila 1: [Foto] [Misión] [Visión]
+   Fila 2: [Historia · span 2] [Ubicación]
+   ─────────────────────────────────────────────────── */
+.nos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+/* Posicionamiento explícito de cada celda */
+.nos-celda--foto        { grid-row: 1; grid-column: 1; }
+.nos-grid > .nos-card:nth-child(2) { grid-row: 1; grid-column: 2; }
+.nos-grid > .nos-card:nth-child(3) { grid-row: 1; grid-column: 3; }
+.nos-card--historia     { grid-row: 2; grid-column: span 2; }
+.nos-card--ubicacion    { grid-row: 2; grid-column: 3; }
+ 
+/* ── Celda base ── */
+.nos-celda {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+ 
+/* ── Foto del equipo ── */
+.nos-celda--foto {
+  min-height: 280px;
+  box-shadow: var(--shadow-md);
+}
+ 
+.nos-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+/* ── Tarjetas texto ──────────────────────────────────
+   Misión / Visión → crema oscuro (como en Figma)
+   Historia / Ubicación → blanco
+   ─────────────────────────────────────────────────── */
+.nos-card {
+  padding: 2rem;
+  background: #e8e4d8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+ 
+.nos-card--historia,
+.nos-card--ubicacion {
+  background: var(--white);
+}
+ 
+.nos-card__titulo {
+  font-family: var(--font-title);
+  color: var(--blue);
+  font-size: 1.15rem;
+  margin: 0 0 0.85rem;
+  text-align: center;
+}
+ 
+.nos-card__texto {
+  font-family: var(--font-body);
+  color: var(--blue);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin: 0;
+}
+ 
+/* ── Ubicación ── */
+.nos-ubicacion {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+}
+ 
+.nos-mapa {
+  width: 160px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+ 
+.nos-contacto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: var(--text-dark);
+}
+ 
+.nos-social {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+ 
+.nos-social__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+ 
+/* ── Responsivo ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .nos-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  /* Reset de posiciones en móvil */
+  .nos-celda--foto,
+  .nos-grid > .nos-card:nth-child(2),
+  .nos-grid > .nos-card:nth-child(3),
+  .nos-card--historia,
+  .nos-card--ubicacion {
+    grid-row: auto;
+    grid-column: auto;
+  }
+ 
+  .nos-celda--foto {
+    min-height: 200px;
+  }
+ 
+  .nos-badge {
+    position: static;
+    transform: none;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+ 
+  .nos-header__inner {
+    text-align: left;
+  }
+ 
+  .nos-ubicacion {
+    flex-direction: column;
+  }
+ 
+  .nos-mapa {
+    width: 100%;
+    height: 150px;
+  }
+}
+ 
+/* ══════════════════════════════════════════════════
+   BANNER DE PROMOCIONES
+   Aparece debajo del grid, lleva a /promociones
+   ══════════════════════════════════════════════════ */
+.nos-promo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 1.75rem auto 0;
+  background: var(--blue);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+ 
+.nos-promo-banner__titulo {
+  font-family: var(--font-title);
+  color: var(--white);
+  font-size: 1.3rem;
+  margin: 0 0 0.4rem;
+}
+ 
+.nos-promo-banner__desc {
+  font-family: var(--font-body);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+}
+ 
+/* Botón — usa los colores de la barbería */
+.nos-promo-banner__btn {
+  display: inline-block;
+  background: var(--red-accent);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+ 
+.nos-promo-banner__btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+ 
+/* Responsivo del banner */
+@media (max-width: 600px) {
+  .nos-promo-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+}
