@@ -1,0 +1,338 @@
+/* ══════════════════════════════════════
+   RESERVA PAGE
+══════════════════════════════════════ */
+
+.reserva-page {
+  min-height: 100vh;
+  background: var(--offwhite);
+}
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+
+.reserva-hero {
+  padding: 5rem 6rem 4rem;
+  background:
+    linear-gradient(
+      rgba(0, 45, 114, .82),
+      rgba(0, 45, 114, .82)
+    ),
+    url('../../assets/img/hero/herobeckham.jpg')
+    center/cover no-repeat;
+  color: var(--white);
+}
+
+.reserva-hero__breadcrumb {
+  font-size: .9rem;
+  opacity: .8;
+  margin-bottom: 1rem;
+}
+
+.reserva-hero__title {
+  font-family: var(--font-title);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.reserva-hero__desc {
+  max-width: 640px;
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: .92;
+}
+
+/* ══════════════════════════════════════
+   CONTAINER
+══════════════════════════════════════ */
+
+.reserva-container {
+  max-width: 1200px;
+  margin: -60px auto 0;
+  padding: 0 2rem 5rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* ══════════════════════════════════════
+   CARD
+══════════════════════════════════════ */
+
+.reserva-left {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem;
+}
+
+/* ══════════════════════════════════════
+   FIELDS
+══════════════════════════════════════ */
+
+.reserva-field {
+  margin-bottom: 2.5rem;
+}
+
+.reserva-label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ══════════════════════════════════════
+   SELECT
+══════════════════════════════════════ */
+
+.reserva-select {
+  width: 100%;
+  height: 54px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0 1rem;
+  font-size: .95rem;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  outline: none;
+  transition:
+    border .2s ease,
+    box-shadow .2s ease;
+}
+
+.reserva-select:focus {
+  border-color: var(--blue-cta);
+  box-shadow: 0 0 0 4px rgba(30, 90, 200, .12);
+}
+
+/* ══════════════════════════════════════
+   BARBEROS
+══════════════════════════════════════ */
+
+.barberos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+.barbero-card {
+  background: var(--surface);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform .22s ease,
+    border .22s ease,
+    box-shadow .22s ease;
+}
+
+.barbero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.barbero-card--active {
+  border-color: var(--blue-cta);
+  background: rgba(30, 90, 200, .06);
+}
+
+.barbero-card__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+}
+
+.barbero-card__nombre {
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: .4rem;
+}
+
+.barbero-card__tag {
+  display: inline-block;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  background: rgba(30, 90, 200, .12);
+  color: var(--blue-cta);
+  font-size: .75rem;
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════
+   CALENDARIO
+══════════════════════════════════════ */
+
+.reserva__dias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  gap: 1rem;
+}
+
+.dia-pill {
+  background: var(--surface);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 1rem .5rem;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    all .22s ease;
+}
+
+.dia-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.dia-pill--active {
+  background: var(--blue-cta);
+  border-color: var(--blue-cta);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.dia-pill__label {
+  display: block;
+  font-size: .75rem;
+  font-weight: 500;
+  margin-bottom: .35rem;
+  opacity: .85;
+}
+
+.dia-pill__num {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* ══════════════════════════════════════
+   HORARIOS
+══════════════════════════════════════ */
+
+.reserva__slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+}
+
+.slot {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: .95rem;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    all .22s ease;
+}
+
+.slot:hover:not(.slot--ocupado) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.slot--activo {
+  background: var(--blue-cta);
+  color: var(--white);
+  border-color: var(--blue-cta);
+  box-shadow: var(--shadow-md);
+}
+
+.slot--ocupado {
+  background: #ece8e2;
+  color: #b0a9a0;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  opacity: .7;
+}
+
+/* ══════════════════════════════════════
+   BUTTON
+══════════════════════════════════════ */
+
+.reserva-btn {
+  width: 100%;
+  height: 58px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  border-radius: var(--radius-md);
+}
+
+.reserva-btn:disabled {
+  background: #c9c4bc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ══════════════════════════════════════
+   UX STATES
+══════════════════════════════════════ */
+
+.barbero-card:focus,
+.slot:focus,
+.dia-pill:focus {
+  outline: 3px solid rgba(30, 90, 200, .18);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+
+@media (max-width: 992px) {
+
+  .reserva-hero {
+    padding: 4rem 2rem 5rem;
+  }
+
+  .reserva-hero__title {
+    font-size: 3rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .reserva-container {
+    margin-top: -40px;
+    padding: 0 1rem 4rem;
+  }
+
+  .reserva-left {
+    padding: 1.5rem;
+  }
+
+  .reserva-hero {
+    text-align: center;
+  }
+
+  .barberos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reserva__dias {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .reserva-hero__title {
+    font-size: 2.4rem;
+  }
+
+  .reserva__slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
