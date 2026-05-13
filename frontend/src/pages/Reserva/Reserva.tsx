@@ -22,21 +22,21 @@ interface Barbero {
 const BARBEROS: Barbero[] = [
   {
     id: 'juan',
-    nombre: 'Juan Perez',
+    nombre: 'Juan D',
     especialidad: 'Cortes modernos',
     imagen: barbero1,
   },
 
   {
-    id: 'carlos',
-    nombre: 'Carlos Garcia',
+    id: 'miguel',
+    nombre: 'Miguel R',
     especialidad: 'Peinados clásicos',
     imagen: barbero2,
   },
 
   {
-    id: 'daniel',
-    nombre: 'Daniel Torres',
+    id: 'andres',
+    nombre: 'Andrés L',
     especialidad: 'Colorimetría',
     imagen: barbero3,
   }
