@@ -1,0 +1,239 @@
+/* ================================================
+   Nosotros.css — valores hardcodeados, sin var()
+   ================================================ */
+
+.nos-page {
+  background-color: #f2eee3;
+  min-height: 100vh;
+  padding: 2.5rem 2rem 4rem;
+  box-sizing: border-box;
+}
+
+/* — Encabezado — */
+.nos-header {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+}
+
+.nos-header__inner {
+  position: relative;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.nos-badge {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.82rem;
+  color: #c9a227;
+  white-space: nowrap;
+}
+
+.nos-titulo {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #002D72;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin: 0;
+}
+
+/* — Grid — */
+.nos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px auto;   /* fila 1 altura fija para la foto */
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Posiciones explícitas */
+.nos-celda--foto     { grid-row: 1; grid-column: 1; }
+.nos-card--mision    { grid-row: 1; grid-column: 2; }
+.nos-card--vision    { grid-row: 1; grid-column: 3; }
+.nos-card--historia  { grid-row: 2; grid-column: 1 / span 2; }
+.nos-card--ubicacion { grid-row: 2; grid-column: 3; }
+
+/* — Celda foto — */
+.nos-celda--foto {
+  border-radius: 15px;
+  overflow: hidden;
+  /* altura la da grid-template-rows */
+}
+
+.nos-foto {
+  width: 100%;
+  height: 100%;       /* llena la fila definida en el grid */
+  object-fit: cover;
+  display: block;
+}
+
+/* — Tarjetas — */
+.nos-card {
+  border-radius: 15px;
+  padding: 2rem;
+  background-color: #e8e4d8;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.nos-card--historia,
+.nos-card--ubicacion {
+  background-color: #ffffff;
+}
+
+.nos-card__titulo {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #002D72;
+  font-size: 1.15rem;
+  margin: 0 0 0.85rem;
+  text-align: center;
+}
+
+.nos-card__texto {
+  font-family: 'Poppins', sans-serif;
+  color: #002D72;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* — Ubicación — */
+.nos-ubicacion {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+}
+
+.nos-mapa {
+  width: 140px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.nos-contacto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  color: #333;
+}
+
+.nos-social {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.nos-social__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #002D72;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ================================================
+   BANNER PROMOCIONES — más margen superior
+   ================================================ */
+.nos-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;        /* más espacio arriba */
+  background-color: #002D72;
+  border-radius: 15px;
+  padding: 2rem 2.5rem;
+}
+
+.nos-banner__titulo {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 0 0 0.4rem;
+}
+
+.nos-banner__desc {
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.nos-banner__btn {
+  display: inline-block;
+  background-color: #C8102E;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.nos-banner__btn:hover {
+  opacity: 0.85;
+}
+
+/* — Responsivo — */
+@media (max-width: 900px) {
+  .nos-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .nos-celda--foto,
+  .nos-card--mision,
+  .nos-card--vision,
+  .nos-card--historia,
+  .nos-card--ubicacion {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .nos-celda--foto {
+    height: 200px;
+  }
+
+  .nos-badge {
+    position: static;
+    transform: none;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .nos-header__inner { text-align: left; }
+  .nos-ubicacion { flex-direction: column; }
+  .nos-mapa { width: 100%; height: 150px; }
+}
+
+@media (max-width: 600px) {
+  .nos-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+}
