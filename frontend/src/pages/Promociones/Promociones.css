@@ -1,8 +1,7 @@
 /* ================================================
-   Promociones.css — valores hardcodeados, sin var()
+   Promociones.css — sin var(), todo hardcodeado
    ================================================ */
 
-/* — Página — */
 .prom-page {
   background-color: #f2eee3;
   min-height: 100vh;
@@ -10,7 +9,7 @@
   box-sizing: border-box;
 }
 
-/* — Encabezado — */
+/* Encabezado */
 .prom-header {
   max-width: 960px;
   margin: 0 auto 1.5rem;
@@ -54,7 +53,7 @@
   margin: 0;
 }
 
-/* — Lista de tarjetas — */
+/* Lista */
 .prom-lista {
   display: flex;
   flex-direction: column;
@@ -63,7 +62,7 @@
   margin: 1.5rem auto 0;
 }
 
-/* — Tarjeta — */
+/* Tarjeta horizontal */
 .prom-card {
   display: flex;
   flex-direction: row;
@@ -71,12 +70,12 @@
   background-color: #ffffff;
   border-radius: 12px;
   border-top: 4px solid #C8102E;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
   overflow: hidden;
   min-height: 140px;
 }
 
-/* Columna izquierda — oferta */
+/* Columna izquierda */
 .prom-card__oferta {
   flex: 0 0 220px;
   display: flex;
@@ -140,7 +139,7 @@
   margin: 0;
 }
 
-/* Columna central — título + botón */
+/* Columna central */
 .prom-card__accion {
   flex: 1;
   display: flex;
@@ -180,9 +179,7 @@
   transition: opacity 0.2s;
 }
 
-.prom-btn:hover {
-  opacity: 0.85;
-}
+.prom-btn:hover { opacity: 0.85; }
 
 .prom-icono {
   display: inline-flex;
@@ -198,7 +195,7 @@
   flex-shrink: 0;
 }
 
-/* Columna derecha — imagen */
+/* Columna derecha */
 .prom-card__imagen {
   flex: 0 0 240px;
   overflow: hidden;
@@ -211,31 +208,11 @@
   display: block;
 }
 
-/* — Responsivo — */
+/* Responsivo */
 @media (max-width: 700px) {
-  .prom-card {
-    flex-direction: column;
-  }
-
-  .prom-card__oferta {
-    flex: none;
-    border-right: none;
-    border-bottom: 1px solid #eee;
-  }
-
-  .prom-card__imagen {
-    flex: none;
-    height: 180px;
-  }
-
-  .prom-badge {
-    position: static;
-    transform: none;
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-
-  .prom-header__inner {
-    text-align: left;
-  }
+  .prom-card { flex-direction: column; }
+  .prom-card__oferta { flex: none; border-right: none; border-bottom: 1px solid #eee; }
+  .prom-card__imagen { flex: none; height: 180px; }
+  .prom-badge { position: static; transform: none; display: block; margin-bottom: 0.4rem; }
+  .prom-header__inner { text-align: left; }
 }

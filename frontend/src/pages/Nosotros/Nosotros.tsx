@@ -15,16 +15,14 @@ const Nosotros = () => {
         </div>
       </header>
 
-      {/* Grid principal */}
+      {/* Grid */}
       <div className="nos-grid">
 
-        {/* Foto equipo */}
         <div className="nos-celda nos-celda--foto">
           <img src={fotoEquipo} alt="Equipo BarberStyle" className="nos-foto" />
         </div>
 
-        {/* Misión */}
-        <div className="nos-celda nos-card">
+        <div className="nos-celda nos-card nos-card--mision">
           <h3 className="nos-card__titulo">Misión</h3>
           <p className="nos-card__texto">
             Brindar Servicios de barbería en alta calidad para nuestros clientes,
@@ -33,8 +31,7 @@ const Nosotros = () => {
           </p>
         </div>
 
-        {/* Visión */}
-        <div className="nos-celda nos-card">
+        <div className="nos-celda nos-card nos-card--vision">
           <h3 className="nos-card__titulo">Visión</h3>
           <p className="nos-card__texto">
             Ser una de las mejores barberías de la ciudad y contar con buenos
@@ -42,7 +39,6 @@ const Nosotros = () => {
           </p>
         </div>
 
-        {/* Historia */}
         <div className="nos-celda nos-card nos-card--historia">
           <h3 className="nos-card__titulo">Nuestra Historia</h3>
           <p className="nos-card__texto">
@@ -58,18 +54,17 @@ const Nosotros = () => {
           </p>
         </div>
 
-        {/* Ubicación */}
         <div className="nos-celda nos-card nos-card--ubicacion">
           <h3 className="nos-card__titulo">Ubicación</h3>
           <div className="nos-ubicacion">
-            <img src={fotoMapa} alt="Mapa BarberStyle" className="nos-mapa" />
+            <img src={fotoMapa} alt="Mapa" className="nos-mapa" />
             <ul className="nos-contacto">
               <li>📞 Teléfono: 3189841566</li>
               <li>💬 WhatsApp: 316544864</li>
               <li>✉ BarberStyle@gmail.com</li>
               <li className="nos-social">
                 <span className="nos-social__icon">f</span>
-                <span className="nos-social__icon">📷</span>
+                <span className="nos-social__icon">ig</span>
               </li>
             </ul>
           </div>
@@ -77,17 +72,50 @@ const Nosotros = () => {
 
       </div>
 
-      {/* ======================================
-          BANNER PROMOCIONES — botón rojo abajo
-          ====================================== */}
-      <div className="nos-promo-banner">
-        <div className="nos-promo-banner__texto">
-          <h2 className="nos-promo-banner__titulo">¿Conoces nuestras promociones?</h2>
-          <p className="nos-promo-banner__desc">
+      {/* Banner Promociones — estilos inline para garantizar que funcione */}
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '1.5rem',
+        maxWidth: '1100px',
+        margin: '3rem auto 0',
+        backgroundColor: '#002D72',
+        borderRadius: '15px',
+        padding: '2rem 2.5rem',
+      }}>
+        <div>
+          <h2 style={{
+            fontFamily: "'Playfair Display', Georgia, serif",
+            color: '#ffffff',
+            fontSize: '1.3rem',
+            margin: '0 0 0.4rem',
+          }}>
+            ¿Conoces nuestras promociones?
+          </h2>
+          <p style={{
+            fontFamily: "'Poppins', sans-serif",
+            color: 'rgba(255,255,255,0.8)',
+            fontSize: '0.9rem',
+            margin: 0,
+          }}>
             Combos especiales, descuentos y paquetes pensados para ti.
           </p>
         </div>
-        <Link to="/promociones" className="nos-promo-banner__btn">
+        <Link to="/promociones" style={{
+          display: 'inline-block',
+          backgroundColor: '#C8102E',
+          color: '#ffffff',
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: '0.9rem',
+          fontWeight: 700,
+          textDecoration: 'none',
+          padding: '0.75rem 2rem',
+          borderRadius: '8px',
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
+        }}>
           Ver Promociones
         </Link>
       </div>
