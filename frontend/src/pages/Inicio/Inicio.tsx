@@ -6,7 +6,7 @@ import barbero2 from '../../assets/img/equipo/barbero2.png'
 import barbero3 from '../../assets/img/equipo/barbero3.png'
 
 // ══════════════════════════════════════
-//  💡 COMPONENTES REUTILIZABLES
+//  COMPONENTES REUTILIZABLES
 //  Felipe los importa en Reserva.tsx
 // ══════════════════════════════════════
 import SelectorServicio from '../../components/SelectorServicio/SelectorServicio'
@@ -34,9 +34,6 @@ const BARBEROS = [
   { id: 'andres', nombre: 'Andrés L.', especialidad: 'Especialista',  imagen: barbero3 },
 ]
 
-// ══════════════════════════════════════
-//  COMPONENTE PRINCIPAL
-// ══════════════════════════════════════
 const Inicio = () => {
 
   const [nombre, setNombre]           = useState('')
@@ -112,28 +109,28 @@ const Inicio = () => {
               </div>
             </div>
 
-            {/* 💡 Componente reutilizable — Felipe lo importa en Reserva.tsx */}
+            {/* Componente reutilizable — Felipe lo importa en Reserva.tsx */}
             <SelectorServicio
               servicios={SERVICIOS}
               servicioActivo={servicioActivo}
               onSeleccionar={setServicio}
             />
 
-            {/* 💡 Componente reutilizable — Felipe lo importa en Reserva.tsx */}
+            {/* Componente reutilizable — Felipe lo importa en Reserva.tsx */}
             <SelectorBarbero
               barberos={BARBEROS}
               barberoActivo={barberoActivo}
               onSeleccionar={setBarbero}
             />
 
-            {/* 💡 Componente reutilizable — Felipe lo importa en Reserva.tsx */}
+            {/* Componente reutilizable — Felipe lo importa en Reserva.tsx */}
             <SelectorDia
               dias={diasProximos}
               diaActivo={diaActivo}
               onSeleccionar={setDia}
             />
 
-            {/* 💡 Componente reutilizable — Felipe lo importa en Reserva.tsx */}
+            {/* Componente reutilizable — Felipe lo importa en Reserva.tsx */}
             <SelectorHorario
               slots={SLOTS}
               slotsOcupados={SLOTS_OCUPADOS}

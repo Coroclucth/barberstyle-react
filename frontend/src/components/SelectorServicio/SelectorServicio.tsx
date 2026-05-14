@@ -15,7 +15,7 @@ interface Props {
 
 // ══════════════════════════════════════
 //  COMPONENTE
-//  💡 Se importa en Inicio.tsx y Reserva.tsx (Felipe)
+//  Se importa en Inicio.tsx y Reserva.tsx (Felipe)
 // ══════════════════════════════════════
 const SelectorServicio = ({ servicios, servicioActivo, onSeleccionar }: Props) => {
   return (

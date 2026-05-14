@@ -14,7 +14,7 @@ interface Props {
 
 // ══════════════════════════════════════
 //  COMPONENTE
-//  💡 Se importa en Inicio.tsx y Reserva.tsx (Felipe)
+//  Se importa en Inicio.tsx y Reserva.tsx (Felipe)
 // ══════════════════════════════════════
 const SelectorDia = ({ dias, diaActivo, onSeleccionar }: Props) => {
   return (

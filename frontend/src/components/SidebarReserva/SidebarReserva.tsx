@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 // ══════════════════════════════════════
 //  TIPOS
-//  💡 Estos props son los únicos datos
+//  Estos props son los únicos datos
 //  que cambian entre páginas de detalle
 // ══════════════════════════════════════
 interface Props {
@@ -19,7 +19,7 @@ const HORARIOS = ['10:00', '12:00', '16:00', '18:00']
 
 // ══════════════════════════════════════
 //  COMPONENTE
-//  💡 Se importa igual en DetalleCorte,
+//  Se importa igual en DetalleCorte,
 //  DetalleTinte, DetalleBarba y DetalleTratamientos
 // ══════════════════════════════════════
 const SidebarReserva = ({ nombreServicio, precio, profesionales }: Props) => {

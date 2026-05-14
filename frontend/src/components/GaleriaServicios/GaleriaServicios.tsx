@@ -1,6 +1,6 @@
 // ══════════════════════════════════════
 //  TIPOS
-//  💡 Solo recibe un arreglo de imágenes
+//  Solo recibe un arreglo de imágenes
 //  que cambia según el servicio
 // ══════════════════════════════════════
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 // ══════════════════════════════════════
 //  COMPONENTE
-//  💡 Se importa igual en DetalleCorte,
+//  Se importa igual en DetalleCorte,
 //  DetalleTinte, DetalleBarba y DetalleTratamientos
 // ══════════════════════════════════════
 const GaleriaServicios = ({ imagenes }: Props) => {

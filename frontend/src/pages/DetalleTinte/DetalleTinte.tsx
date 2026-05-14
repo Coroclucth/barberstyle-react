@@ -7,7 +7,7 @@ import barbero1 from '../../assets/img/equipo/barbero1.png'
 import barbero2 from '../../assets/img/equipo/barbero2.png'
 import barbero3 from '../../assets/img/equipo/barbero3.png'
 
-// 💡 MISMOS componentes que DetalleCorte — no se repite nada
+// MISMOS componentes que DetalleCorte — no se repite nada
 import GaleriaServicios from '../../components/GaleriaServicios/GaleriaServicios'
 import ProfesionalesGrid from '../../components/ProfesionalesGrid/ProfesionalesGrid'
 import SidebarReserva from '../../components/SidebarReserva/SidebarReserva'

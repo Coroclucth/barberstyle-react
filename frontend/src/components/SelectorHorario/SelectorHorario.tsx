@@ -10,7 +10,7 @@ interface Props {
 
 // ══════════════════════════════════════
 //  COMPONENTE
-//  💡 Se importa en Inicio.tsx y Reserva.tsx (Felipe)
+//  Se importa en Inicio.tsx y Reserva.tsx (Felipe)
 // ══════════════════════════════════════
 const SelectorHorario = ({ slots, slotsOcupados, slotActivo, onSeleccionar }: Props) => {
   return (

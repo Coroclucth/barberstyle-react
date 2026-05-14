@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 // ══════════════════════════════════════
 //  TIPOS
-//  💡 Solo cambian los datos de los
+// Solo cambian los datos de los
 //  profesionales según el servicio
 // ══════════════════════════════════════
 interface Profesional {
@@ -17,7 +17,7 @@ interface Props {
 
 // ══════════════════════════════════════
 //  COMPONENTE
-//  💡 Se importa igual en DetalleCorte,
+// Se importa igual en DetalleCorte,
 //  DetalleTinte, DetalleBarba y DetalleTratamientos
 // ══════════════════════════════════════
 const ProfesionalesGrid = ({ profesionales }: Props) => {
