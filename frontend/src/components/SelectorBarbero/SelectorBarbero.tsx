@@ -16,7 +16,7 @@ interface Props {
 
 // ══════════════════════════════════════
 //  COMPONENTE
-//  💡 Se importa en Inicio.tsx y Reserva.tsx (Felipe)
+//  Se importa en Inicio.tsx y Reserva.tsx (Felipe)
 // ══════════════════════════════════════
 const SelectorBarbero = ({ barberos, barberoActivo, onSeleccionar }: Props) => {
   return (

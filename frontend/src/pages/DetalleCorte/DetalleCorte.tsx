@@ -12,7 +12,7 @@ import barbero2 from '../../assets/img/equipo/barbero2.png'
 import barbero3 from '../../assets/img/equipo/barbero3.png'
 
 // ══════════════════════════════════════
-//  💡 COMPONENTES REUTILIZABLES
+//  COMPONENTES REUTILIZABLES
 //  Estos mismos se importan en DetalleTinte,
 //  DetalleBarba y DetalleTratamientos
 // ══════════════════════════════════════
@@ -72,18 +72,18 @@ const DetalleCorte = () => {
 
           <div className="detalle__divider" />
 
-          {/* 💡 Componente reutilizable — solo cambian las imágenes */}
+          {/* Componente reutilizable — solo cambian las imágenes */}
           <GaleriaServicios imagenes={GALERIA} />
 
           <div className="detalle__divider" />
 
-          {/* 💡 Componente reutilizable — solo cambian los profesionales */}
+          {/* Componente reutilizable — solo cambian los profesionales */}
           <ProfesionalesGrid profesionales={PROFESIONALES} />
 
         </main>
 
         {/* ── Sidebar ── */}
-        {/* 💡 Componente reutilizable — solo cambian nombre y precio */}
+        {/* Componente reutilizable — solo cambian nombre y precio */}
         <aside className="detalle__sidebar">
           <SidebarReserva
             nombreServicio="Corte de Cabello"
