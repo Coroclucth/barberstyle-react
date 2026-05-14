@@ -4,7 +4,6 @@ import barbero2 from '../../assets/img/equipo/barbero2.png'
 import barbero3 from '../../assets/img/equipo/barbero3.png'
 import './Equipo.css'
 
-
 // ══════════════════════════════════════
 // TIPOS
 // ══════════════════════════════════════
@@ -28,26 +27,24 @@ const BARBEROS: Barbero[] = [
     especialidad: 'Especialista en cortes modernos y fades.',
     imagen: barbero1,
     descripcion:
-      'Más de 8 años creando estilos modernos y personalizados.'
+      'Más de 8 años creando estilos modernos y personalizados.',
   },
-
   {
-    id: 'Miguel',
+    id: 'miguel',
     nombre: 'Miguel R',
     especialidad: 'Especialista en peinados clásicos.',
     imagen: barbero2,
     descripcion:
-      'Experto en cortes clásicos y técnicas tradicionales.'
+      'Experto en cortes clásicos y técnicas tradicionales.',
   },
-
   {
     id: 'andres',
-    nombre: 'Andres L',
+    nombre: 'Andrés L',
     especialidad: 'Especialista en colorimetría.',
     imagen: barbero3,
     descripcion:
-      'Especialista en tintes, decoloraciones y estilos urbanos.'
-  }
+      'Especialista en tintes, decoloraciones y estilos urbanos.',
+  },
 ]
 
 // ══════════════════════════════════════
@@ -57,9 +54,10 @@ const BARBEROS: Barbero[] = [
 const Equipo = () => {
 
   return (
+
     <div className="equipo">
 
-      {/* HEADER */}
+      {/* HERO */}
       <section className="equipo__hero">
 
         <p className="equipo__breadcrumb">
@@ -93,24 +91,28 @@ const Equipo = () => {
               className="equipo-card__img"
             />
 
-            <h3 className="equipo-card__nombre">
-              {barbero.nombre}
-            </h3>
+            <div className="equipo-card__body">
 
-            <p className="equipo-card__esp">
-              {barbero.especialidad}
-            </p>
+              <h3 className="equipo-card__nombre">
+                {barbero.nombre}
+              </h3>
 
-            <p className="equipo-card__texto">
-              {barbero.descripcion}
-            </p>
+              <p className="equipo-card__esp">
+                {barbero.especialidad}
+              </p>
 
-            <Link
-              to="/reserva"
-              className="equipo-card__btn"
-            >
-              RESERVAR AHORA
-            </Link>
+              <p className="equipo-card__texto">
+                {barbero.descripcion}
+              </p>
+
+              <Link
+                to="/reserva"
+                className="equipo-card__btn btn btn--primary"
+              >
+                RESERVAR CON ESTE BARBERO
+              </Link>
+
+            </div>
 
           </div>
 
@@ -119,6 +121,7 @@ const Equipo = () => {
       </section>
 
     </div>
+
   )
 }
 

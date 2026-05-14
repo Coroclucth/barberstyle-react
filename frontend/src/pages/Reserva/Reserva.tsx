@@ -2,59 +2,49 @@ import { useState } from 'react'
 import barbero1 from '../../assets/img/equipo/barbero1.png'
 import barbero2 from '../../assets/img/equipo/barbero2.png'
 import barbero3 from '../../assets/img/equipo/barbero3.png'
+import SelectorServicio from '../../components/SelectorServicio/SelectorServicio'
+import SelectorBarbero from '../../components/SelectorBarbero/SelectorBarbero'
+import SelectorDia from '../../components/SelectorDia/SelectorDia'
+import SelectorHorario from '../../components/SelectorHorario/SelectorHorario'
 import './Reserva.css'
-
-// ══════════════════════════════════════
-// TIPOS
-// ══════════════════════════════════════
-
-interface Barbero {
-  id: string
-  nombre: string
-  especialidad: string
-  imagen: string
-}
 
 // ══════════════════════════════════════
 // DATOS
 // ══════════════════════════════════════
 
-const BARBEROS: Barbero[] = [
+const SERVICIOS = [
+  { id: 'corte',       nombre: 'Corte de cabello', precio: '$25.000' },
+  { id: 'barba',       nombre: 'Barba',             precio: '$15.000' },
+  { id: 'tinte',       nombre: 'Tinte',             precio: '$45.000' },
+  { id: 'tratamiento', nombre: 'Tratamiento',       precio: '$35.000' },
+]
+
+const BARBEROS = [
   {
     id: 'juan',
     nombre: 'Juan D',
     especialidad: 'Cortes modernos',
     imagen: barbero1,
   },
-
   {
     id: 'miguel',
     nombre: 'Miguel R',
     especialidad: 'Peinados clásicos',
     imagen: barbero2,
   },
-
   {
     id: 'andres',
     nombre: 'Andrés L',
     especialidad: 'Colorimetría',
     imagen: barbero3,
-  }
+  },
 ]
 
-const DIAS = ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SAB']
+const DIAS_LABELS = ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SAB']
 
 const SLOTS = [
-  '08:00',
-  '09:00',
-  '10:00',
-  '11:00',
-  '12:00',
-  '01:00',
-  '02:00',
-  '03:00',
-  '04:00',
-  '05:00',
+  '08:00', '09:00', '10:00', '11:00', '12:00',
+  '01:00', '02:00', '03:00', '04:00', '05:00',
 ]
 
 const SLOTS_OCUPADOS = ['09:00', '12:00']
@@ -65,24 +55,18 @@ const SLOTS_OCUPADOS = ['09:00', '12:00']
 
 const Reserva = () => {
 
-  const [servicio, setServicio] = useState('corte')
-  const [barberoActivo, setBarbero] = useState('juan')
-  const [diaActivo, setDia] = useState(0)
-  const [slotActivo, setSlot] = useState('')
+  const [servicioActivo, setServicio]  = useState('corte')
+  const [barberoActivo,  setBarbero]   = useState('juan')
+  const [diaActivo,      setDia]       = useState(0)
+  const [slotActivo,     setSlot]      = useState('')
 
-  // ══════════════════════════════════════
-  // CALENDARIO DINÁMICO
-  // ══════════════════════════════════════
-
+  // ── Calendario dinámico (próximos 7 días) ──────────────
   const diasProximos = Array.from({ length: 7 }, (_, i) => {
-
     const fecha = new Date()
-
     fecha.setDate(fecha.getDate() + i)
-
     return {
-      label: DIAS[fecha.getDay()],
-      num: fecha.getDate(),
+      label: DIAS_LABELS[fecha.getDay()],
+      num:   fecha.getDate(),
     }
   })
 
@@ -113,166 +97,36 @@ const Reserva = () => {
 
       <section className="reserva-container">
 
-        {/* IZQUIERDA */}
-
         <div className="reserva-left card">
 
-          {/* SERVICIO */}
+          {/* SELECTOR SERVICIO — componente reutilizable de Jaider */}
+          <SelectorServicio
+            servicios={SERVICIOS}
+            servicioActivo={servicioActivo}
+            onSeleccionar={setServicio}
+          />
 
-          <div className="reserva-field">
+          {/* SELECTOR BARBERO — componente reutilizable de Jaider */}
+          <SelectorBarbero
+            barberos={BARBEROS}
+            barberoActivo={barberoActivo}
+            onSeleccionar={setBarbero}
+          />
 
-            <label className="reserva-label">
-              Selecciona el servicio
-            </label>
+          {/* SELECTOR DÍA — componente reutilizable de Jaider */}
+          <SelectorDia
+            dias={diasProximos}
+            diaActivo={diaActivo}
+            onSeleccionar={setDia}
+          />
 
-            <select
-              className="reserva-select"
-              value={servicio}
-              onChange={(e) => setServicio(e.target.value)}
-            >
-
-              <option value="corte">
-                Corte de cabello
-              </option>
-
-              <option value="barba">
-                Barba
-              </option>
-
-              <option value="tinte">
-                Tinte
-              </option>
-
-            </select>
-
-          </div>
-
-          {/* BARBEROS */}
-
-          <div className="reserva-field">
-
-            <label className="reserva-label">
-              Elige tu barbero
-            </label>
-
-            <div className="barberos-grid">
-
-              {BARBEROS.map((barbero) => (
-
-                <div
-                  key={barbero.id}
-                  className={`barbero-card ${
-                    barberoActivo === barbero.id
-                      ? 'barbero-card--active'
-                      : ''
-                  }`}
-                  onClick={() => setBarbero(barbero.id)}
-                >
-
-                  <img
-                    src={barbero.imagen}
-                    alt={barbero.nombre}
-                    className="barbero-card__img"
-                  />
-
-                  <p className="barbero-card__nombre">
-                    {barbero.nombre}
-                  </p>
-
-                  <span className="barbero-card__tag">
-                    {barbero.especialidad}
-                  </span>
-
-                </div>
-
-              ))}
-
-            </div>
-
-          </div>
-
-          {/* CALENDARIO */}
-
-          <div className="reserva-field">
-
-            <label className="reserva-label">
-              Selecciona el día
-            </label>
-
-            <div className="reserva__dias">
-
-              {diasProximos.map((dia, i) => (
-
-                <div
-                  key={i}
-                  className={`dia-pill ${
-                    diaActivo === i
-                      ? 'dia-pill--active'
-                      : ''
-                  }`}
-                  onClick={() => setDia(i)}
-                >
-
-                  <span className="dia-pill__label">
-                    {dia.label}
-                  </span>
-
-                  <span className="dia-pill__num">
-                    {dia.num}
-                  </span>
-
-                </div>
-
-              ))}
-
-            </div>
-
-          </div>
-
-          {/* HORARIOS */}
-
-          <div className="reserva-field">
-
-            <label className="reserva-label">
-              Horarios disponibles
-            </label>
-
-            <div className="reserva__slots">
-
-              {SLOTS.map((slot) => {
-
-                const ocupado =
-                  SLOTS_OCUPADOS.includes(slot)
-
-                return (
-
-                  <div
-                    key={slot}
-                    className={`slot ${
-                      ocupado
-                        ? 'slot--ocupado'
-                        : ''
-                    } ${
-                      slotActivo === slot && !ocupado
-                        ? 'slot--activo'
-                        : ''
-                    }`}
-                    onClick={() =>
-                      !ocupado && setSlot(slot)
-                    }
-                  >
-
-                    {slot}
-
-                  </div>
-
-                )
-
-              })}
-
-            </div>
-
-          </div>
+          {/* SELECTOR HORARIO — componente reutilizable de Jaider */}
+          <SelectorHorario
+            slots={SLOTS}
+            slotsOcupados={SLOTS_OCUPADOS}
+            slotActivo={slotActivo}
+            onSeleccionar={setSlot}
+          />
 
           {/* BOTÓN */}
 
@@ -280,9 +134,7 @@ const Reserva = () => {
             className="btn btn--primary reserva-btn"
             disabled={!slotActivo}
           >
-
             CONFIRMAR RESERVA
-
           </button>
 
         </div>
